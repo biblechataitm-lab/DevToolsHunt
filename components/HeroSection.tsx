@@ -2,32 +2,35 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Terminal, Code, Cpu, Flame, Copy, Check, Search, ShieldCheck, ArrowRight, GitBranch, Play } from 'lucide-react';
+import { Terminal, Cpu, Code2, Zap, Play, Copy, Check, Search, ShieldCheck, ArrowRight, Star, Users } from 'lucide-react';
 
-const CLI_TOOLS = [
+const RUNTIME_TOOLS = [
   {
     id: 'oxc',
     name: 'oxc_parser',
-    ecosystem: 'Rust • JS Toolchain',
-    cmd: 'cargo add oxc_parser --features=ast-serialize',
-    output: '✓ Compiled oxc_parser v0.34.0 (3.2x faster than SWC/Babel)\n⚡ AST Generation completed in 4.2ms across 1,840 modules',
-    stars: '14.8k ★',
+    ecosystem: 'Rust Toolchain',
+    category: 'High-Performance JS/TS Tooling',
+    cmd: 'cargo install oxc_cli && oxc lint ./src',
+    speed: '4.2x faster than Biome',
+    output: `[oxc] 482 files parsed in 14.2ms (0 errors, 0 warnings)\n✓ AST memory footprint: 1.8MB`,
   },
   {
-    id: 'bun',
+    id: 'bunx',
     name: 'bunx runner',
-    ecosystem: 'Zig • Fast Runtime',
-    cmd: 'bunx --bun create-next-app@latest ./app --ts',
-    output: '✓ Installed 42 packages in 184ms\n⚡ Ready on http://localhost:3000 in 12ms',
-    stars: '72.4k ★',
+    ecosystem: 'Zig / C++ Runtime',
+    category: 'Native Fast Executor',
+    cmd: 'bunx --bun create-next-app@latest ./app',
+    speed: '28x faster than npm/npx',
+    output: `[bun] Resolved 42 packages in 84ms\n✓ Ready in 120ms at http://localhost:3000`,
   },
   {
     id: 'fzf',
     name: 'fzf previewer',
-    ecosystem: 'Go • Shell Utility',
-    cmd: 'git log --oneline | fzf --preview "git show --color=always {}"',
-    output: '✓ Interactive fuzzy stream initialized\n⚡ Filtering 100k commits with zero drop frames',
-    stars: '61.2k ★',
+    ecosystem: 'Go / Native CLI',
+    category: 'Interactive Fuzzy Finder',
+    cmd: 'fzf --preview="bat --color=always {}"',
+    speed: 'Sub-millisecond index',
+    output: `14,290/14,290 items indexed in 2.1ms\n> Query: async* (Match 100%)`,
   },
 ];
 
@@ -36,7 +39,7 @@ export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [copied, setCopied] = useState(false);
 
-  const currentTool = CLI_TOOLS[activeToolIndex];
+  const currentTool = RUNTIME_TOOLS[activeToolIndex];
 
   const handleCopy = () => {
     navigator.clipboard.writeText(currentTool.cmd);
@@ -46,23 +49,26 @@ export function HeroSection() {
 
   return (
     <section className="devtool-hero">
+      <div className="devtool-ambient-glow" />
+
       <div className="devtool-hero-grid">
-        {/* Left: Monospace Value Proposition */}
+        {/* Left: Terminal Value Proposition */}
         <div className="devtool-hero-content">
-          <div className="devtool-terminal-badge">
-            <span className="devtool-prompt-char">&gt;</span>
-            <span>devtoolshunt --status=active --curated=2026</span>
+          <div className="devtool-badge">
+            <span className="devtool-terminal-prompt">$</span>
+            <span>Developer Tools & High-Speed CLI Index</span>
+            <span className="devtool-badge-pill">v2026</span>
           </div>
 
           <h1 className="devtool-title">
-            The Developer-First Index for <span className="devtool-matrix-text">CLI Tools & Dev Runtimes</span>.
+            The Engineer's Hub for <span className="devtool-highlight">CLI Utilities</span>, Compilers & Runtimes.
           </h1>
 
           <p className="devtool-lead">
-            Curated command-line utilities, high-performance compilers, profiling engines, API test harnesses, and terminal superpowers.
+            Curating ultra-fast Rust, Zig, Go, and Native developer tools, linters, debuggers, profiling engines, and terminal workhorses.
           </p>
 
-          {/* Search box formatted as a shell prompt */}
+          {/* Hacker Search Box */}
           <form 
             action="/search" 
             method="GET" 
@@ -71,40 +77,69 @@ export function HeroSection() {
               if (!searchQuery.trim()) e.preventDefault();
             }}
           >
-            <span className="devtool-cli-icon">$</span>
+            <span className="devtool-search-prefix">$ devtools search</span>
             <input
               type="text"
               name="q"
-              placeholder="Search CLI tools, rust crates, debuggers, linters..."
+              placeholder="--tag=compilers,profilers,linters..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="devtool-search-input"
             />
             <button type="submit" className="devtool-search-btn">
-              Execute Search
+              Execute
             </button>
           </form>
 
-          {/* Ecosystem chips */}
+          {/* Dual Action CTAs */}
+          <div className="devtool-cta-row">
+            <Link href="/category/developer-tools" className="devtool-primary-btn">
+              Explore 4,800+ DevTools <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="devtool-secondary-btn">
+              Submit CLI Tool
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="devtool-social-proof">
+            <div className="devtool-avatar-stack">
+              <span className="dev-avatar av-1">⚡</span>
+              <span className="dev-avatar av-2">💻</span>
+              <span className="dev-avatar av-3">🦀</span>
+              <span className="dev-avatar av-4">🚀</span>
+            </div>
+            <div className="devtool-proof-text">
+              <div className="devtool-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-emerald-400 text-emerald-400" />
+                ))}
+                <span className="devtool-rating">4.9/5.0</span>
+              </div>
+              <span className="devtool-subtext">Benchmarked by 72,000+ backend and systems developers</span>
+            </div>
+          </div>
+
+          {/* Ecosystem Pills */}
           <div className="devtool-tags-row">
-            <span className="devtool-tags-label">Stacks:</span>
+            <span className="devtool-tags-label">Toolchains:</span>
             <div className="devtool-tags-list">
               <Link href="/category/developer-tools" className="devtool-tag-pill">
-                <Terminal size={12} /> CLI Engines
-              </Link>
-              <Link href="/category/ai" className="devtool-tag-pill">
-                <Cpu size={12} /> Rust Tooling
+                <Terminal size={12} /> Rust / Zig
               </Link>
               <Link href="/category/productivity" className="devtool-tag-pill">
-                <Code size={12} /> API Clients
+                <Zap size={12} /> Fast Linters
+              </Link>
+              <Link href="/category/ai" className="devtool-tag-pill">
+                <Code2 size={12} /> AI Copilots
               </Link>
               <Link href="/category/automation" className="devtool-tag-pill">
-                <GitBranch size={12} /> Git Utilities
+                <Cpu size={12} /> Profilers
               </Link>
             </div>
           </div>
 
-          {/* Developer trust metrics */}
+          {/* Metrics Strip */}
           <div className="devtool-metrics-strip">
             <div className="devtool-metric-box">
               <span className="devtool-metric-val">4,800+</span>
@@ -112,32 +147,32 @@ export function HeroSection() {
             </div>
             <div className="devtool-metric-divider" />
             <div className="devtool-metric-box">
-              <span className="devtool-metric-val">100%</span>
-              <span className="devtool-metric-desc">Terminal Tested</span>
+              <span className="devtool-metric-val">0-Bloat</span>
+              <span className="devtool-metric-desc">Native Speed</span>
             </div>
             <div className="devtool-metric-divider" />
             <div className="devtool-metric-box">
-              <span className="devtool-metric-val">Zero-Bloat</span>
-              <span className="devtool-metric-desc">Curated Stacks</span>
+              <span className="devtool-metric-val">100% Free</span>
+              <span className="devtool-metric-desc">Community Tested</span>
             </div>
           </div>
         </div>
 
-        {/* Right: Live Interactive macOS Terminal Window */}
-        <div className="devtool-terminal-window">
-          <div className="terminal-window-header">
-            <div className="terminal-window-controls">
-              <span className="control-dot close" />
-              <span className="control-dot minimize" />
-              <span className="control-dot expand" />
+        {/* Right: macOS Interactive Terminal Window Card */}
+        <div className="devtool-terminal-card">
+          <div className="terminal-window-top">
+            <div className="terminal-dots">
+              <span className="tdot red" />
+              <span className="tdot yellow" />
+              <span className="tdot green" />
             </div>
-            <span className="terminal-window-title">bash — 80x24 (dev-runtime)</span>
-            <span className="terminal-window-stars">{currentTool.stars}</span>
+            <span className="terminal-title">bash — 80x24 (zsh)</span>
+            <span className="terminal-speed-tag">{currentTool.speed}</span>
           </div>
 
-          {/* Terminal Tabs */}
-          <div className="terminal-tabs-row">
-            {CLI_TOOLS.map((tool, idx) => (
+          {/* Tool Switcher Tabs */}
+          <div className="terminal-switcher-row">
+            {RUNTIME_TOOLS.map((tool, idx) => (
               <button
                 key={tool.id}
                 onClick={() => setActiveToolIndex(idx)}
@@ -149,15 +184,20 @@ export function HeroSection() {
             ))}
           </div>
 
-          {/* Interactive Shell Body */}
+          {/* Active Tool Meta Box */}
+          <div className="terminal-meta-row">
+            <span className="terminal-ecosystem">{currentTool.ecosystem}</span>
+            <span className="terminal-cat">{currentTool.category}</span>
+          </div>
+
+          {/* Interactive Shell Command & Output */}
           <div className="terminal-body">
             <div className="terminal-cmd-line">
-              <span className="terminal-shell-user">dev@hunt:~</span>
-              <span className="terminal-prompt">$</span>
-              <code className="terminal-cmd-text">{currentTool.cmd}</code>
+              <span className="tprompt">techmero@macbook-pro:~$</span>
+              <code className="tcode">{currentTool.cmd}</code>
               <button 
                 onClick={handleCopy} 
-                className="terminal-copy-action"
+                className="terminal-copy-btn"
                 title="Copy Command"
                 type="button"
               >
@@ -165,21 +205,16 @@ export function HeroSection() {
                 <span>{copied ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
-
-            {/* Output Stream */}
             <pre className="terminal-stdout">
               <code>{currentTool.output}</code>
             </pre>
           </div>
 
           {/* Terminal Footer */}
-          <div className="terminal-window-footer">
-            <div className="terminal-ecosystem-tag">
-              <span className="terminal-status-green" />
-              <span>{currentTool.ecosystem}</span>
-            </div>
+          <div className="terminal-card-footer">
+            <span className="terminal-status-text">● Zero runtime dependencies</span>
             <Link href="/submit" className="terminal-submit-link">
-              Submit DevTool <ArrowRight size={13} />
+              Submit DevTool <ArrowRight size={12} />
             </Link>
           </div>
         </div>

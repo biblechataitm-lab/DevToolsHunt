@@ -567,7 +567,7 @@ a {
   }
 }
 
-.devtool-terminal-badge {
+.devtool-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -580,6 +580,329 @@ a {
   font-size: 12px;
   color: #34d399;
 }
+
+.devtool-terminal-prompt {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.devtool-badge-pill {
+  background-color: #10b981;
+  color: #0d1117;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.devtool-highlight {
+  color: #10b981;
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.devtool-ambient-glow {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 440px;
+  height: 290px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(13, 17, 23, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.devtool-search-prefix {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: #10b981;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.devtool-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.devtool-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #10b981;
+  color: #0d1117 !important;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+  transition: all 0.15s ease;
+}
+
+.devtool-primary-btn:hover {
+  background-color: var(--color-primary-active);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.devtool-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #161b22;
+  color: var(--text-ink) !important;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  transition: all 0.15s ease;
+}
+
+.devtool-secondary-btn:hover {
+  background-color: #21262d;
+  border-color: #10b981;
+  color: #34d399 !important;
+}
+
+.devtool-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  padding: 8px 12px;
+  background-color: rgba(22, 27, 34, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  max-width: fit-content;
+}
+
+.devtool-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.dev-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #161b22;
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-left: -6px;
+}
+
+.dev-avatar:first-child {
+  margin-left: 0;
+}
+
+.devtool-proof-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.devtool-proof-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.devtool-rating {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-ink);
+  margin-left: 4px;
+}
+
+.devtool-subtext {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Terminal window card */
+.devtool-terminal-card {
+  background-color: #0b0f14;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.terminal-window-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.tdot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.tdot.red { background-color: #ff5f56; }
+.tdot.yellow { background-color: #ffbd2e; }
+.tdot.green { background-color: #27c93f; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.terminal-speed-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #34d399;
+  background-color: rgba(16, 185, 129, 0.12);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.terminal-switcher-row {
+  display: flex;
+  gap: 4px;
+  background-color: #0e1217;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.terminal-tab-btn.active {
+  background-color: #1c2128;
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.terminal-meta-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background-color: rgba(22, 27, 34, 0.4);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.terminal-ecosystem {
+  color: #38bdf8;
+}
+
+.terminal-cat {
+  color: var(--text-muted);
+}
+
+.terminal-body {
+  padding: 12px;
+}
+
+.terminal-cmd-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background-color: #161b22;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tprompt {
+  color: #38bdf8;
+  font-size: 11px;
+}
+
+.tcode {
+  color: #f0f6fc;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.terminal-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: #10b981;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+.terminal-stdout {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+  white-space: pre-wrap;
+  background-color: #06080b;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  max-height: 75px;
+  overflow-y: auto;
+}
+
+.terminal-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #0e1217;
+  border-top: 1px solid var(--border-color);
+}
+
+.terminal-status-text {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #34d399;
+}
+
+.terminal-submit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #10b981;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.terminal-submit-link:hover {
+  opacity: 0.85;
+}
+
 
 .devtool-prompt-char {
   color: #10b981;
