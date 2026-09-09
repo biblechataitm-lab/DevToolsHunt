@@ -23,12 +23,10 @@ export function Header({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
   useEffect(() => {
     if (headerRef.current) {
       headerRef.current.style.opacity = '0';
-      headerRef.current.style.transform = 'translateY(-12px)';
       requestAnimationFrame(() => {
         if (headerRef.current) {
-          headerRef.current.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          headerRef.current.style.transition = 'opacity 0.4s ease';
           headerRef.current.style.opacity = '1';
-          headerRef.current.style.transform = 'translateY(0)';
         }
       });
     }
