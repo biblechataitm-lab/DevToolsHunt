@@ -4,19 +4,20 @@ import React from 'react';
 
 export function Header({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
   return (
-    <header class="terminal-navbar">
-  <div class="container terminal-nav-container">
-    <a href="/" class="terminal-nav-brand">
-      <span class="terminal-prompt-char">&gt;_</span>
-      <span>DevToolsHunt</span>
-    </a>
-    <div class="terminal-nav-links">
-      <a href="/"><span class="t-dim">cd</span> /home</a>
-      <a href="/trends"><span class="t-dim">git</span> /trends</a>
-      <a href="/search"><span class="t-dim">grep</span> /search</a>
-      <a href="/submit" class="terminal-btn-launch">+ submit_tool.sh</a>
-    </div>
-  </div>
-</header>
+    <header className="terminal-navbar">
+      <div className="container terminal-nav-container">
+        <a href="/" className="terminal-nav-brand">
+          <span className="terminal-prompt-char">&gt;_</span>
+          <span>DevToolsHunt</span>
+        </a>
+        <div className="terminal-nav-links">
+        <a href="/">cd /home</a>
+        <a href="/trends">git /trends</a>
+        <a href="/category/cli">ls /cli</a>
+        <a href="/search">grep /search</a>
+          <a href="/submit" className="terminal-btn-launch">+ submit_tool.sh</a>
+        </div>
+      </div>
+    </header>
   );
 }
