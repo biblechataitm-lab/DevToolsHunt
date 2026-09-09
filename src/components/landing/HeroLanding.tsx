@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { Search, Terminal, Code2, ArrowRight, TrendingUp } from 'lucide-react';
 
 export function HeroLanding() {
@@ -64,14 +63,14 @@ export function HeroLanding() {
           </form>
 
           <div className="dth-animate dth-hero-tags">
-            <Link href="/category/developer-tools" className="dth-tag">
+            <a href="/category/developer-tools" className="dth-tag">
               <Code2 size={12} /> CLI Tools
-            </Link>
-            <Link href="/category/productivity" className="dth-tag">IDE Extensions</Link>
-            <Link href="/category/ai" className="dth-tag">AI Coding</Link>
-            <Link href="/trends" className="dth-tag dth-tag-hot">
+            </a>
+            <a href="/category/productivity" className="dth-tag">IDE Extensions</a>
+            <a href="/category/ai" className="dth-tag">AI Coding</a>
+            <a href="/trends" className="dth-tag dth-tag-hot">
               <TrendingUp size={12} /> Trending
-            </Link>
+            </a>
           </div>
         </div>
 

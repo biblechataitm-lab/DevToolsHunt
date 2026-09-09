@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { Terminal, Cpu, Zap, Code2, ArrowRight, CheckCircle2, Flame, Layers, ShieldCheck, Binary } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Gain immediate GitHub stars, early contributors, and adoption from engineers at top tech companies.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Submit CLI Tool <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/developer-tools" className="launch-cta-secondary">
+            </a>
+            <a href="/category/developer-tools" className="launch-cta-secondary">
               Browse DevTools
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Search, Terminal, PlusCircle, Menu, X, TrendingUp } from 'lucide-react';
 
@@ -42,12 +41,12 @@ export function Header({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
   return (
     <header ref={headerRef} className={`dth-nav ${scrolled ? 'dth-nav-scrolled' : ''}`}>
       <div className="dth-nav-inner">
-        <Link href="/" className="dth-nav-brand">
+        <a href="/" className="dth-nav-brand">
           <div className="dth-nav-logo">
             <Terminal size={16} />
           </div>
           <span className="dth-nav-brand-text">{siteName}</span>
-        </Link>
+        </a>
 
         <form onSubmit={handleSearchSubmit} className="dth-nav-search">
           <Search size={14} className="dth-nav-search-icon" />
@@ -60,15 +59,15 @@ export function Header({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
         </form>
 
         <nav className="dth-nav-links">
-          <Link href="/trends" className={`dth-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
+          <a href="/trends" className={`dth-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
             <TrendingUp size={13} /> Trends
-          </Link>
-          <Link href="/sponsor" className={`dth-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>
+          </a>
+          <a href="/sponsor" className={`dth-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>
             Sponsor
-          </Link>
-          <Link href="/submit" className="dth-nav-cta">
+          </a>
+          <a href="/submit" className="dth-nav-cta">
             <PlusCircle size={14} /> Submit
-          </Link>
+          </a>
         </nav>
 
         <button className="dth-nav-mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
@@ -78,10 +77,10 @@ export function Header({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
 
       {mobileOpen && (
         <div className="dth-nav-mobile-menu">
-          <Link href="/trends" onClick={() => setMobileOpen(false)}>Trends</Link>
-          <Link href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</Link>
-          <Link href="/submit" onClick={() => setMobileOpen(false)}>Submit Tool</Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
+          <a href="/trends" onClick={() => setMobileOpen(false)}>Trends</a>
+          <a href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</a>
+          <a href="/submit" onClick={() => setMobileOpen(false)}>Submit Tool</a>
+          <a href="/about" onClick={() => setMobileOpen(false)}>About</a>
         </div>
       )}
     </header>

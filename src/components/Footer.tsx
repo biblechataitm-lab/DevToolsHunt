@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { Terminal, ExternalLink, MessageCircle, Mail } from 'lucide-react';
 
 export function Footer({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
@@ -27,29 +26,29 @@ export function Footer({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
             <div>
               <h4 className="dth-footer-heading">Explore</h4>
               <ul>
-                <li><Link href="/">Today's Launches</Link></li>
-                <li><Link href="/trends">Trending Tools</Link></li>
-                <li><Link href="/collections/this-week">Weekly Top</Link></li>
-                <li><Link href="/collections/this-month">Monthly Top</Link></li>
+                <li><a href="/">Today's Launches</a></li>
+                <li><a href="/trends">Trending Tools</a></li>
+                <li><a href="/collections/this-week">Weekly Top</a></li>
+                <li><a href="/collections/this-month">Monthly Top</a></li>
               </ul>
             </div>
             <div>
               <h4 className="dth-footer-heading">Categories</h4>
               <ul>
-                <li><Link href="/category/developer-tools">CLI & Build Tools</Link></li>
-                <li><Link href="/category/ai">AI Coding</Link></li>
-                <li><Link href="/category/productivity">IDE Extensions</Link></li>
-                <li><Link href="/category/search-data">APIs & Data</Link></li>
+                <li><a href="/category/developer-tools">CLI & Build Tools</a></li>
+                <li><a href="/category/ai">AI Coding</a></li>
+                <li><a href="/category/productivity">IDE Extensions</a></li>
+                <li><a href="/category/search-data">APIs & Data</a></li>
               </ul>
             </div>
             <div>
               <h4 className="dth-footer-heading">Directory</h4>
               <ul>
-                <li><Link href="/submit">Submit a Tool</Link></li>
-                <li><Link href="/sponsor">Sponsor</Link></li>
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/privacy">Privacy</Link></li>
-                <li><Link href="/terms">Terms</Link></li>
+                <li><a href="/submit">Submit a Tool</a></li>
+                <li><a href="/sponsor">Sponsor</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/terms">Terms</a></li>
               </ul>
             </div>
           </div>

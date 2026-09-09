@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { ArrowRight, Rocket } from 'lucide-react';
 
 export function CTASection() {
@@ -14,12 +13,12 @@ export function CTASection() {
           Join the fastest-growing developer tools directory. Get featured, benchmarked, and discovered.
         </p>
         <div className="dth-cta-buttons">
-          <Link href="/submit" className="dth-cta-btn-primary">
+          <a href="/submit" className="dth-cta-btn-primary">
             <Rocket size={15} /> Submit Your Tool
-          </Link>
-          <Link href="/sponsor" className="dth-cta-btn-secondary">
+          </a>
+          <a href="/sponsor" className="dth-cta-btn-secondary">
             Sponsor a Slot <ArrowRight size={14} />
-          </Link>
+          </a>
         </div>
       </div>
     </section>
