@@ -1,16 +1,18 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { HeroSection } from '@/components/HeroSection';
-import { LandingSections } from '@/components/LandingSections';
+import { HeroLanding } from '@/components/landing/HeroLanding';
+import { StatsSection } from '@/components/landing/StatsSection';
+import { FeaturesSection } from '@/components/landing/FeaturesSection';
+import { CTASection } from '@/components/landing/CTASection';
 
 export const prerender = true;
 ---
 
-<Layout>
-  <div class="w-full">
-    <HeroSection client:load />
-    <div class="container">
-      <LandingSections client:visible />
-    </div>
+<Layout title="DevToolsHunt — Discover the Best Developer Tools" description="The curated directory for developer tools, CLI utilities, IDE extensions, and infrastructure.">
+  <div class="dth-landing">
+    <HeroLanding client:load />
+    <StatsSection client:visible />
+    <FeaturesSection client:visible />
+    <CTASection client:visible />
   </div>
 </Layout>

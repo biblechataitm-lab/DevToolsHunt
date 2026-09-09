@@ -1,52 +1,63 @@
 import React from 'react';
 import Link from 'next/link';
+import { Terminal, ExternalLink, MessageCircle, Mail } from 'lucide-react';
 
 export function Footer({ siteName = 'DevToolsHunt' }: { siteName?: string }) {
   return (
-    <footer className="footer-wrapper">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <div className="header-brand" style={{ marginBottom: '12px' }}>
+    <footer className="dth-footer">
+      <div className="dth-footer-content">
+        <div className="dth-footer-top">
+          <div className="dth-footer-brand-area">
+            <div className="dth-footer-brand">
+              <div className="dth-nav-logo"><Terminal size={14} /></div>
               <span>{siteName}</span>
-              <span className="header-brand-dot" />
             </div>
-            <p style={{ fontSize: '13.5px', color: 'var(--text-body)', maxWidth: '320px', lineHeight: 1.6 }}>
-              The developer-first directory for CLI tools, terminal harnesses & dev infrastructure.
+            <p className="dth-footer-tagline">
+              The curated developer tools directory. Discover, compare, and upvote
+              the best CLI tools, IDE extensions, and infrastructure utilities.
             </p>
+            <div className="dth-footer-socials">
+              <a href="#" aria-label="Website"><ExternalLink size={16} /></a>
+              <a href="#" aria-label="Community"><MessageCircle size={16} /></a>
+              <a href="#" aria-label="Email"><Mail size={16} /></a>
+            </div>
           </div>
 
-          <div>
-            <h4 className="footer-heading">Discover</h4>
-            <ul className="footer-links">
-              <li><Link href="/">Today's Launches</Link></li>
-              <li><Link href="/trends">Trending Tools</Link></li>
-              <li><Link href="/collections/this-week">Weekly Curations</Link></li>
-              <li><Link href="/collections/this-month">Monthly Roundups</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Publishing</h4>
-            <ul className="footer-links">
-              <li><Link href="/submit">Submit Product</Link></li>
-              <li><Link href="/sponsor">Sponsor Directory</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Legal</h4>
-            <ul className="footer-links">
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Service</Link></li>
-            </ul>
+          <div className="dth-footer-links-grid">
+            <div>
+              <h4 className="dth-footer-heading">Explore</h4>
+              <ul>
+                <li><Link href="/">Today's Launches</Link></li>
+                <li><Link href="/trends">Trending Tools</Link></li>
+                <li><Link href="/collections/this-week">Weekly Top</Link></li>
+                <li><Link href="/collections/this-month">Monthly Top</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="dth-footer-heading">Categories</h4>
+              <ul>
+                <li><Link href="/category/developer-tools">CLI & Build Tools</Link></li>
+                <li><Link href="/category/ai">AI Coding</Link></li>
+                <li><Link href="/category/productivity">IDE Extensions</Link></li>
+                <li><Link href="/category/search-data">APIs & Data</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="dth-footer-heading">Directory</h4>
+              <ul>
+                <li><Link href="/submit">Submit a Tool</Link></li>
+                <li><Link href="/sponsor">Sponsor</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/privacy">Privacy</Link></li>
+                <li><Link href="/terms">Terms</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <div>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</div>
-          <div>Powered by Publisher Ad Network</div>
+        <div className="dth-footer-bottom">
+          <span>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</span>
+          <span className="dth-footer-code">// powered by Publisher Ad Network</span>
         </div>
       </div>
     </footer>
