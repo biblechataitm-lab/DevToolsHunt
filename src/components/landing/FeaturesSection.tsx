@@ -1,40 +1,32 @@
 'use client';
 
 import React from 'react';
-import { Cpu, GitFork, Layers, Package, Shield, Zap } from 'lucide-react';
-
-const FEATURES = [
-  { icon: Zap, title: 'Lightning Reviews', description: 'Every tool is benchmarked and reviewed by active developers. No fluff, just data.', color: '#22d3ee' },
-  { icon: GitFork, title: 'Open Source First', description: 'We prioritize open-source tools. See GitHub stars, license type, and contributor count.', color: '#34d399' },
-  { icon: Cpu, title: 'Performance Metrics', description: 'Build times, bundle sizes, memory usage — real benchmarks for real decisions.', color: '#f59e0b' },
-  { icon: Package, title: 'Stack Builder', description: 'Assemble your perfect dev stack. Compare tools side-by-side across categories.', color: '#a78bfa' },
-  { icon: Layers, title: 'Deep Integrations', description: 'See how tools connect — CI/CD compatibility, plugin ecosystems, and migration guides.', color: '#fb923c' },
-  { icon: Shield, title: 'Security Audit', description: 'Every tool is checked for known vulnerabilities, supply chain risks, and license conflicts.', color: '#f87171' },
-];
 
 export function FeaturesSection() {
   return (
-    <section className="dth-features">
-      <div className="dth-features-header">
-        <span className="dth-section-tag"># Features</span>
-        <h2 className="dth-section-title">
-          Built by Devs, <span className="dth-cyan-text">for Devs</span>
-        </h2>
-        <p className="dth-section-subtitle">
-          More than a list — a living, benchmarked ecosystem of developer tools.
-        </p>
-      </div>
-      <div className="dth-features-grid">
-        {FEATURES.map((f) => (
-          <div key={f.title} className="dth-feature-card">
-            <div className="dth-feature-icon" style={{ color: f.color, borderColor: f.color + '30' }}>
-              <f.icon size={22} />
-            </div>
-            <h3 className="dth-feature-title">{f.title}</h3>
-            <p className="dth-feature-desc">{f.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <section class="terminal-benchmarks container">
+  <div class="t-bench-header">
+    <span class="t-green-badge">// BENCHMARKS</span>
+    <h2>Performance First, <span class="terminal-cyan">Zero Fluff</span></h2>
+    <p>Every CLI tool and extension is benchmarked for startup latency and RAM footprint.</p>
+  </div>
+  <div class="terminal-grid-3">
+    <div class="t-card">
+      <div class="t-card-num">01</div>
+      <h3>Micro-Second Cold Starts</h3>
+      <p>We test binary execution times down to the microsecond so your shell prompt never stutters.</p>
+    </div>
+    <div class="t-card">
+      <div class="t-card-num">02</div>
+      <h3>Multi-Architecture Binaries</h3>
+      <p>Instant compatibility checks for Apple Silicon (ARM64), Linux x86_64, and WSL2.</p>
+    </div>
+    <div class="t-card">
+      <div class="t-card-num">03</div>
+      <h3>Verified Open Source</h3>
+      <p>Direct GitHub telemetry: Star velocity, commit cadence, and maintainer activity audits.</p>
+    </div>
+  </div>
+</section>
   );
 }

@@ -1,115 +1,61 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Search, Terminal, Code2, ArrowRight, TrendingUp } from 'lucide-react';
+import React from 'react';
 
 export function HeroLanding() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const children = hero.querySelectorAll('.dth-animate');
-    children.forEach((el, i) => {
-      const htmlEl = el as HTMLElement;
-      htmlEl.style.opacity = '0';
-      htmlEl.style.transform = 'translateY(24px)';
-      setTimeout(() => {
-        htmlEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        htmlEl.style.opacity = '1';
-        htmlEl.style.transform = 'translateY(0)';
-      }, 100 + i * 100);
-    });
-  }, []);
-
   return (
-    <section ref={heroRef} className="dth-hero">
-      {/* Terminal scanline effect */}
-      <div className="dth-hero-scanlines" aria-hidden="true" />
-
-      <div className="dth-hero-container">
-        <div className="dth-hero-content">
-          <div className="dth-animate dth-hero-badge">
-            <Terminal size={13} />
-            <span>~/devtools-hunt</span>
-            <span className="dth-badge-cursor">▊</span>
+    <section class="terminal-hero">
+  <div class="terminal-hero-grid container">
+    <div class="terminal-hero-left">
+      <div class="terminal-badge">
+        <span class="terminal-blink">$</span>
+        <span>brew install devtoolshunt</span>
+      </div>
+      <h1 class="terminal-title">
+        The Command-Line <br/><span class="terminal-cyan">& Terminal Engine</span>
+      </h1>
+      <p class="terminal-desc">
+        Curating the fastest CLI binaries, TUI dashboards, debugger harnesses, and open developer infrastructure.
+      </p>
+      <div class="terminal-cmd-bar">
+        <span class="terminal-prompt-sym">❯</span>
+        <input type="text" placeholder="dth search --category=cli" class="terminal-cmd-input" />
+        <span class="terminal-kbd">⌘K</span>
+      </div>
+      <div class="terminal-tags">
+        <span>#popular:</span>
+        <a href="/category/cli" class="t-tag">CLI & TUI</a>
+        <a href="/category/databases" class="t-tag">SQLite / DB</a>
+        <a href="/category/cicd" class="t-tag">Docker</a>
+      </div>
+    </div>
+    <div class="terminal-hero-right">
+      <div class="terminal-window">
+        <div class="terminal-window-header">
+          <div class="terminal-dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
           </div>
-
-          <h1 className="dth-animate dth-hero-title">
-            The Developer's <br />
-            <span className="dth-cyan-text">Ultimate Toolbox</span>
-          </h1>
-
-          <p className="dth-animate dth-hero-subtitle">
-            Discover, compare, and upvote 1,800+ developer tools — from CLI utilities
-            and IDE extensions to CI/CD pipelines and infrastructure.
-          </p>
-
-          <form
-            className="dth-animate dth-hero-search"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.querySelector('input');
-              if (input?.value.trim()) {
-                window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
-              }
-            }}
-          >
-            <span className="dth-search-prompt">$</span>
-            <input type="text" placeholder="search --tools 'linting, bundlers, testing...'" />
-            <button type="submit">
-              <Search size={14} /> Run
-            </button>
-          </form>
-
-          <div className="dth-animate dth-hero-tags">
-            <a href="/category/developer-tools" className="dth-tag">
-              <Code2 size={12} /> CLI Tools
-            </a>
-            <a href="/category/productivity" className="dth-tag">IDE Extensions</a>
-            <a href="/category/ai" className="dth-tag">AI Coding</a>
-            <a href="/trends" className="dth-tag dth-tag-hot">
-              <TrendingUp size={12} /> Trending
-            </a>
-          </div>
+          <span class="terminal-tab-title">devtoolshunt@macbook: ~</span>
         </div>
-
-        {/* Terminal window preview */}
-        <div className="dth-animate dth-hero-terminal">
-          <div className="dth-terminal-titlebar">
-            <div className="dth-terminal-dots">
-              <span className="dth-dot dth-dot-red" />
-              <span className="dth-dot dth-dot-yellow" />
-              <span className="dth-dot dth-dot-green" />
-            </div>
-            <span className="dth-terminal-title">devtools-hunt — zsh</span>
+        <div class="terminal-window-body">
+          <div class="t-line"><span class="t-green">→</span> <span class="t-cyan">~</span> dth list --trending</div>
+          <div class="t-line t-dim">Fetching verified developer tools...</div>
+          <div class="t-table">
+            <div class="t-row t-head"><span>NAME</span><span>STARS</span><span>BENCHMARK</span></div>
+            <div class="t-row"><span>ripgrep</span><span class="t-yellow">★ 48.2k</span><span class="t-green">14ms parse</span></div>
+            <div class="t-row"><span>lazygit</span><span class="t-yellow">★ 42.1k</span><span class="t-green">0.2s launch</span></div>
+            <div class="t-row"><span>bun</span><span class="t-yellow">★ 75.3k</span><span class="t-green">4x v8 node</span></div>
+            <div class="t-row"><span>biome</span><span class="t-yellow">★ 18.9k</span><span class="t-green">25x prettier</span></div>
           </div>
-          <div className="dth-terminal-body">
-            <div className="dth-terminal-line">
-              <span className="dth-t-prompt">❯</span>
-              <span className="dth-t-cmd"> dth search</span>
-              <span className="dth-t-flag"> --category</span>
-              <span className="dth-t-val"> "developer-tools"</span>
-            </div>
-            <div className="dth-terminal-line dth-t-output">
-              Found <span className="dth-t-num">1,847</span> tools across <span className="dth-t-num">24</span> categories
-            </div>
-            <div className="dth-terminal-line dth-t-output">
-              <span className="dth-t-success">✓</span> Top today: <span className="dth-t-highlight">Vite 7</span> — 342 upvotes
-            </div>
-            <div className="dth-terminal-line dth-t-output">
-              <span className="dth-t-success">✓</span> Rising: <span className="dth-t-highlight">Biome 2.0</span> — 289 upvotes
-            </div>
-            <div className="dth-terminal-line dth-t-output">
-              <span className="dth-t-success">✓</span> New: <span className="dth-t-highlight">Oxlint</span> — 256 upvotes
-            </div>
-            <div className="dth-terminal-line">
-              <span className="dth-t-prompt">❯</span>
-              <span className="dth-cursor-blink">▊</span>
-            </div>
+          <div className="t-line t-cyan mt-2">
+            <span className="terminal-blink">█</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }

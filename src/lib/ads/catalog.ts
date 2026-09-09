@@ -3,57 +3,133 @@ import { request, mockMode } from './client';
 
 const MOCK_PRODUCTS: Product[] = [
   {
-    "id": "dev-1",
-    "title": "HyperTerm CLI",
-    "tagline": "GPU-accelerated terminal multiplexer with built-in agentic command hooks",
-    "description": "Next-generation terminal emulator designed for high-throughput streaming and live agent telemetry.",
-    "logo": "https://placehold.co/96x96/161b22/10b981?text=HT",
-    "link": "https://example.com/hyperterm",
+    "id": "dth-1",
+    "title": "Ripgrep",
+    "tagline": "Ultra-fast recursive regex search utility built in Rust that honors .gitignore",
+    "link": "https://github.com/BurntSushi/ripgrep",
     "category": "CLI & Terminals",
+    "upvotes": 520,
     "tags": [
       "cli",
-      "terminal",
+      "search",
       "rust"
     ],
     "techStack": [
       "Rust",
-      "WebGPU",
-      "C++"
+      "Regex"
     ],
-    "coverImages": [],
-    "upvotes": 312,
-    "launchedAt": "2026-08-19T05:12:33.187Z",
     "maker": {
-      "name": "Alex Miller",
-      "username": "amiller",
-      "avatar": "https://placehold.co/64x64/21262d/10b981?text=A"
+      "name": "Andrew Gallant",
+      "avatar": "https://placehold.co/64x64/22d3ee/0d1117?text=RG"
     }
   },
   {
-    "id": "dev-2",
-    "title": "QueryMesh",
-    "tagline": "Instant zero-overhead Postgres query mocking and visual explain analyzer",
-    "description": "Profile slow queries, simulate lock contention, and generate schema migration plans with instant AST analysis.",
-    "logo": "https://placehold.co/96x96/161b22/06b6d4?text=QM",
-    "link": "https://example.com/querymesh",
-    "category": "Database Tools",
+    "id": "dth-2",
+    "title": "LazyGit",
+    "tagline": "Simple terminal UI for git commands that transforms your everyday workflow",
+    "link": "https://github.com/jesseduffield/lazygit",
+    "category": "CLI & Terminals",
+    "upvotes": 480,
     "tags": [
-      "database",
-      "postgres",
-      "sql"
+      "git",
+      "terminal",
+      "tui"
     ],
     "techStack": [
       "Go",
-      "PostgreSQL",
+      "Gocui"
+    ],
+    "maker": {
+      "name": "Jesse Duffield",
+      "avatar": "https://placehold.co/64x64/34d399/0d1117?text=LG"
+    }
+  },
+  {
+    "id": "dth-3",
+    "title": "Starship CLI",
+    "tagline": "The minimal, blazing-fast, and infinitely customizable cross-shell prompt",
+    "link": "https://starship.rs",
+    "category": "CLI & Terminals",
+    "upvotes": 430,
+    "tags": [
+      "shell",
+      "prompt",
+      "rust"
+    ],
+    "techStack": [
+      "Rust",
+      "Zsh",
+      "Fish"
+    ],
+    "maker": {
+      "name": "Starship Team",
+      "avatar": "https://placehold.co/64x64/f59e0b/0d1117?text=SS"
+    }
+  },
+  {
+    "id": "dth-4",
+    "title": "Biome",
+    "tagline": "High-performance toolchain for web development, formatting and linting in milliseconds",
+    "link": "https://biomejs.dev",
+    "category": "CI/CD & DevOps",
+    "upvotes": 395,
+    "tags": [
+      "linter",
+      "formatter",
+      "compiler"
+    ],
+    "techStack": [
+      "Rust",
+      "JavaScript",
       "TypeScript"
     ],
-    "coverImages": [],
-    "upvotes": 245,
-    "launchedAt": "2026-08-17T05:12:33.188Z",
     "maker": {
-      "name": "Sarah Lin",
-      "username": "slin",
-      "avatar": "https://placehold.co/64x64/21262d/06b6d4?text=S"
+      "name": "Biome Authors",
+      "avatar": "https://placehold.co/64x64/a78bfa/0d1117?text=BM"
+    }
+  },
+  {
+    "id": "dth-5",
+    "title": "Bun",
+    "tagline": "Incredibly fast all-in-one JavaScript runtime, bundler, and package manager",
+    "link": "https://bun.sh",
+    "category": "SDKs & APIs",
+    "upvotes": 360,
+    "tags": [
+      "runtime",
+      "package-manager",
+      "zig"
+    ],
+    "techStack": [
+      "Zig",
+      "C++",
+      "JavaScript"
+    ],
+    "maker": {
+      "name": "Jarred Sumner",
+      "avatar": "https://placehold.co/64x64/ec4899/0d1117?text=BN"
+    }
+  },
+  {
+    "id": "dth-6",
+    "title": "OrbStack",
+    "tagline": "Fast, light, and battery-friendly way to run Docker containers & Linux machines on Mac",
+    "link": "https://orbstack.dev",
+    "category": "CI/CD & DevOps",
+    "upvotes": 340,
+    "tags": [
+      "docker",
+      "macos",
+      "containers"
+    ],
+    "techStack": [
+      "Swift",
+      "Rust",
+      "Linux Kernel"
+    ],
+    "maker": {
+      "name": "Danny Guo",
+      "avatar": "https://placehold.co/64x64/38bdf8/0d1117?text=OS"
     }
   }
 ];
