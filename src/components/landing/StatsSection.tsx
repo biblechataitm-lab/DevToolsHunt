@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '1,847', label: 'Developer Tools', color: '#22d3ee' },
-  { value: '24', label: 'Categories', color: '#34d399' },
-  { value: '120+', label: 'Daily Submissions', color: '#f59e0b' },
-  { value: '40K+', label: 'Active Developers', color: '#a78bfa' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Releases' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {

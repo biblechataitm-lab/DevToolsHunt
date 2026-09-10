@@ -4,58 +4,95 @@ import React from 'react';
 
 export function HeroLanding() {
   return (
-    <section class="terminal-hero">
-  <div class="terminal-hero-grid container">
-    <div class="terminal-hero-left">
-      <div class="terminal-badge">
-        <span class="terminal-blink">$</span>
-        <span>brew install devtoolshunt</span>
-      </div>
-      <h1 class="terminal-title">
-        The Command-Line <br/><span class="terminal-cyan">& Terminal Engine</span>
-      </h1>
-      <p class="terminal-desc">
-        Curating the fastest CLI binaries, TUI dashboards, debugger harnesses, and open developer infrastructure.
-      </p>
-      <div class="terminal-cmd-bar">
-        <span class="terminal-prompt-sym">❯</span>
-        <input type="text" placeholder="dth search --category=cli" class="terminal-cmd-input" />
-        <span class="terminal-kbd">⌘K</span>
-      </div>
-      <div class="terminal-tags">
-        <span>#popular:</span>
-        <a href="/category/cli" class="t-tag">CLI & TUI</a>
-        <a href="/category/databases" class="t-tag">SQLite / DB</a>
-        <a href="/category/cicd" class="t-tag">Docker</a>
-      </div>
-    </div>
-    <div class="terminal-hero-right">
-      <div class="terminal-window">
-        <div class="terminal-window-header">
-          <div class="terminal-dots">
-            <span class="dot-red"></span>
-            <span class="dot-yellow"></span>
-            <span class="dot-green"></span>
+    <section className="terminal-hero">
+      <div className="terminal-hero-grid container">
+        <div className="terminal-hero-left">
+          <div className="terminal-badge">
+            <span className="terminal-blink">$</span>
+            <span>brew install devtoolshunt</span>
           </div>
-          <span class="terminal-tab-title">devtoolshunt@macbook: ~</span>
-        </div>
-        <div class="terminal-window-body">
-          <div class="t-line"><span class="t-green">→</span> <span class="t-cyan">~</span> dth list --trending</div>
-          <div class="t-line t-dim">Fetching verified developer tools...</div>
-          <div class="t-table">
-            <div class="t-row t-head"><span>NAME</span><span>STARS</span><span>BENCHMARK</span></div>
-            <div class="t-row"><span>ripgrep</span><span class="t-yellow">★ 48.2k</span><span class="t-green">14ms parse</span></div>
-            <div class="t-row"><span>lazygit</span><span class="t-yellow">★ 42.1k</span><span class="t-green">0.2s launch</span></div>
-            <div class="t-row"><span>bun</span><span class="t-yellow">★ 75.3k</span><span class="t-green">4x v8 node</span></div>
-            <div class="t-row"><span>biome</span><span class="t-yellow">★ 18.9k</span><span class="t-green">25x prettier</span></div>
+
+          <h1 className="terminal-title">
+            The Command-Line <br />
+            <span className="terminal-cyan">&amp; Terminal Engine</span>
+          </h1>
+
+          <p className="terminal-desc">
+            Curating the fastest CLI binaries, Rust-based TUIs, high-throughput debugging harnesses, and open developer infrastructure.
+          </p>
+
+          <div className="terminal-cmd-bar">
+            <span className="terminal-prompt-sym">❯</span>
+            <input 
+              type="text" 
+              placeholder="dth search --category=cli --stars &gt; 1000" 
+              className="terminal-cmd-input" 
+              aria-label="Search developer tools"
+            />
+            <span className="terminal-kbd">⌘K</span>
           </div>
-          <div className="t-line t-cyan mt-2">
-            <span className="terminal-blink">█</span>
+
+          <div className="terminal-tags">
+            <span className="terminal-tag-lbl">#popular_flags:</span>
+            <a href="/category/cli" className="t-tag">--cli-tui</a>
+            <a href="/category/databases" className="t-tag">--sqlite-db</a>
+            <a href="/category/cicd" className="t-tag">--containers</a>
+            <a href="/category/developer-tools" className="t-tag">--harnesses</a>
           </div>
         </div>
+
+        <div className="terminal-hero-right">
+          <div className="terminal-window">
+            <div className="terminal-window-header">
+              <div className="terminal-dots">
+                <span className="dot-red"></span>
+                <span className="dot-yellow"></span>
+                <span className="dot-green"></span>
+              </div>
+              <span className="terminal-tab-title">dth@bash: ~ (zsh)</span>
+            </div>
+            <div className="terminal-window-body">
+              <div className="t-line"><span className="t-green">→</span> <span className="t-cyan">~</span> dth list --trending --verified</div>
+              <div className="t-line t-dim">[INFO] Connecting to live developer tool registry...</div>
+              <div className="t-table">
+                <div className="t-row t-header-row">
+                  <span>PKG_NAME</span>
+                  <span>CATEGORY</span>
+                  <span>RUNTIME</span>
+                  <span>STATUS</span>
+                </div>
+                <div className="t-row">
+                  <span className="t-pkg">ripgrep</span>
+                  <span className="t-cat">search</span>
+                  <span className="t-speed">Rust</span>
+                  <span className="t-stars">VERIFIED</span>
+                </div>
+                <div className="t-row">
+                  <span className="t-pkg">lazygit</span>
+                  <span className="t-cat">git-tui</span>
+                  <span className="t-speed">Go</span>
+                  <span className="t-stars">VERIFIED</span>
+                </div>
+                <div className="t-row">
+                  <span className="t-pkg">bat</span>
+                  <span className="t-cat">cat-clone</span>
+                  <span className="t-speed">Rust</span>
+                  <span className="t-stars">VERIFIED</span>
+                </div>
+                <div className="t-row">
+                  <span className="t-pkg">zellij</span>
+                  <span className="t-cat">multiplexer</span>
+                  <span className="t-speed">Rust</span>
+                  <span className="t-stars">VERIFIED</span>
+                </div>
+              </div>
+              <div className="t-cursor-line">
+                <span className="t-green">❯</span> <span className="t-cursor">█</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 }

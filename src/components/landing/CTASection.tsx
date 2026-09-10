@@ -8,7 +8,7 @@ export function CTASection() {
     <section className="dth-cta">
       <div className="dth-cta-border" aria-hidden="true" />
       <div className="dth-cta-content">
-        <h2 className="dth-cta-title">Ship Your Dev Tool to <span className="dth-cyan-text">40K+ Developers</span></h2>
+        <h2 className="dth-cta-title">Ship Your Dev Tool to <span className="dth-cyan-text">Developers Worldwide</span></h2>
         <p className="dth-cta-subtitle">
           Join the fastest-growing developer tools directory. Get featured, benchmarked, and discovered.
         </p>
